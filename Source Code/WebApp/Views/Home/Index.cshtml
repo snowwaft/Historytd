@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section PreScripts
+{
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=FvZ7imn3ksGT84wErLUY3ax3UrXjr9ra&s=1"></script>
+}
+
+@section Styles
+{
+    <style type="text/css">
+        html,body
+        {
+            height:100%
+        }
+
+        #map-container {
+            height: 100%
+        }
+    </style>
+}
+
+<div id="map-container"></div>
+
+
+@section Scripts{
+    <script type="text/javascript">
+        var map = new BMap.Map("map-container");
+        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11); 
+    </script>
+}
