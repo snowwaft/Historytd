@@ -14,6 +14,7 @@ using WebApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newinfosoft.Historytd.Repository;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 
 namespace WebApp
 {
@@ -46,11 +47,15 @@ namespace WebApp
             services.AddDefaultIdentity<IdentityUser>((configureOptions) =>
             {
                 configureOptions.Password.RequireUppercase = false;
-            })
-            .AddDefaultUI(UIFramework.Bootstrap4)
-            .AddEntityFrameworkStores<ApplicationDbContext>();
+            }).AddDefaultUI(UIFramework.Bootstrap4).AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // In production, the Angular files will be served from this directory
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,6 +76,7 @@ namespace WebApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSpaStaticFiles();
 
             app.UseAuthentication();
 
@@ -79,6 +85,19 @@ namespace WebApp
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseSpa(spa =>
+            {
+                // To learn more about options for serving an Angular SPA from ASP.NET Core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
+
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
             });
         }
     }

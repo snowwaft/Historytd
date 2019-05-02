@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newinfosoft.Historytd.Entity", "Newinfosoft.Historytd.Entity\Newinfosoft.Historytd.Entity.csproj", "{A0D3B556-91B0-4A56-9236-D3A70AB40085}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newinfosoft.Historytd.Repository", "Newinfosoft.Historytd.Repository\Newinfosoft.Historytd.Repository.csproj", "{004C4726-C8B4-44B9-8F96-2B7F97064937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newinfosoft.Historytd.Repository", "Newinfosoft.Historytd.Repository\Newinfosoft.Historytd.Repository.csproj", "{004C4726-C8B4-44B9-8F96-2B7F97064937}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{08A23E3A-07F3-4B89-8737-814CFC7FBD97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{08A23E3A-07F3-4B89-8737-814CFC7FBD97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

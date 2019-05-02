@@ -5,6 +5,7 @@
     <UserSecretsId>aspnet-WebApp-8CE4661C-C713-46B6-AA88-266C7FD6FA31</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
   </PropertyGroup>
 
 
@@ -17,6 +18,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Newinfosoft.Historytd.Repository\Newinfosoft.Historytd.Repository.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="ClientApp\" />
   </ItemGroup>
 
 </Project>
