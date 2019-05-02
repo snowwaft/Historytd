@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Newinfosoft.Historytd.Entity
 {
-    partial class EventBase : ObjectBase
+    partial class Person
     {
         /// <summary>
-        /// 事件的Id，主键
+        /// 人物Id
         /// </summary>
         [Key]
-        public Guid EventId { get; set; }
+        public Guid Id { get; set; }
     }
 }
