@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NzLayoutModule } from 'ng-zorro-antd';
+import {NgxAmapModule} from 'ngx-amap';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ClientApp';
+  isCollapsed = false;
+  isReverseArrow = false;
+  width = 200;
 }
