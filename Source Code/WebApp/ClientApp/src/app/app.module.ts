@@ -10,12 +10,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { NgxAmapModule } from 'ngx-amap';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { MainMenuComponent } from './common/views/main-menu/main-menu.component';
+import { DateSelectorComponent } from './common/controls/date-selector/date-selector.component';
 
 registerLocaleData(zh);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainPageComponent,
+    MainMenuComponent,
+    DateSelectorComponent
   ],
   imports: [
     BrowserModule,

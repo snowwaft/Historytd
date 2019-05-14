@@ -1,0 +1,13 @@
+<div style="display: inline">
+  <nz-select style="width: 100px;" class="control-margin-normal" [(ngModel)]="date.type" nzAllowClear
+  nzPlaceHolder="公元">
+  <nz-option nzValue="0" nzLabel="公元前"></nz-option>
+  <nz-option nzValue="1" nzLabel="公元"></nz-option>
+</nz-select>
+<nz-input-number style="width:80px;" class="control-margin-normal" [nzMin]="0" [nzMax]="5000" [nzStep]="1"
+  [(ngModel)]="date.year" nzPlaceHolder="年"></nz-input-number>
+<nz-input-number style="width:60px;" class="control-margin-normal" [nzMin]="1" [nzMax]="12" [nzStep]="1"
+  [(ngModel)]="date.month" nzPlaceHolder="月"></nz-input-number>
+<nz-input-number style="width:60px;" class="control-margin-normal" [nzMin]="1" [nzMax]="31" [nzStep]="1"
+  [(ngModel)]="date.day" nzPlaceHolder="日"></nz-input-number>
+</div>
