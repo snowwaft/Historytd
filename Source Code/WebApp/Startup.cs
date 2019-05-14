@@ -37,12 +37,17 @@ namespace WebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-                    connectionString: Configuration.GetConnectionString("DefaultConnection")));
-            //Add database
-            services.AddDbContext<HistoryDbContext>(options => options.UseSqlServer(
-                connectionString: Configuration.GetConnectionString("DefaultConnection"),
-                sqlServerOptionsAction: b => b.MigrationsAssembly("Newinfosoft.Historytd.Repository")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase(
+                databaseName:"Application"));
+            services.AddDbContext<HistoryDbContext>(options => options.UseInMemoryDatabase(
+                databaseName:"Application"));
+
+            // services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+            //         connectionString: Configuration.GetConnectionString("DefaultConnection")));
+            // //Add database
+            // services.AddDbContext<HistoryDbContext>(options => options.UseSqlServer(
+            //     connectionString: Configuration.GetConnectionString("DefaultConnection"),
+            //     sqlServerOptionsAction: b => b.MigrationsAssembly("Newinfosoft.Historytd.Repository")));
 
             services.AddDefaultIdentity<IdentityUser>((configureOptions) =>
             {
