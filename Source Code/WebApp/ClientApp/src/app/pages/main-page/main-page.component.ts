@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainPageComponentViewModel } from './main-page.component.viewmodel';
+import { FrameworkElement } from '../../common/controls/frameworkElement';
 
 
 @Component({
@@ -7,13 +8,12 @@ import { MainPageComponentViewModel } from './main-page.component.viewmodel';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.less']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent extends FrameworkElement implements OnInit {
 
   constructor() {
-    this.viewModel = new MainPageComponentViewModel();
+    super();
+    this.dataContext = new MainPageComponentViewModel();
   }
-
-  viewModel: MainPageComponentViewModel;
 
   ngOnInit() {
   }

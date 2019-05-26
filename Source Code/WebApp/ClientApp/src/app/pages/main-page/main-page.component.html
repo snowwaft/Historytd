@@ -1,11 +1,10 @@
 <nz-layout class="layout">
-  <htd-main-menu [dataContext]="viewModel"></htd-main-menu>
+  <htd-main-menu [dataContext]="dataContext"></htd-main-menu>
   <nz-content>
-    <div style="height: 100%;padding-top: 2px">
+    <div style="height: 100%;padding-top: 2px;position:relative">
       <ngx-amap class="demo-map" [center]="[116.397428, 39.90923]">
-        <amap-marker [position]="[116.397428, 39.90923]" (markerClick)="onMarkerClick($event)"></amap-marker>
+        <amap-marker [position]="[116.397428, 39.90923]"></amap-marker>
       </ngx-amap>
-      {{viewModel.date}}
     </div>
   </nz-content>
   <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer>

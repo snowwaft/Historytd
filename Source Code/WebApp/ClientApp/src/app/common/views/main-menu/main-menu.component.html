@@ -6,9 +6,15 @@
     </div>
     <div nz-col nzXs="0" nzSm="0" nzMd="10" nzLg="10" nzXl="13" nzxxl="15">
       <div class="horizontal-left">
+        <nz-dropdown [nzTrigger]="'click'" class="control-margin-normal" *ngFor="let menu of dataContext.menus">
+          <a nz-dropdown>{{menu.name}}<i nz-icon type="down"></i> </a>
+          <ul nz-menu>
+            <li nz-menu-item *ngFor="let submenu of menu.children">{{submenu.name}}</li>
+          </ul>
+        </nz-dropdown>
         <button nz-button nzType="primary" nzShape="circle" nzSize="small" class="control-margin-normal"
-        (click)="dataContext.execute(command)"
-          *ngFor="let command of dataContext.commands">
+                (click)="dataContext.execute(command)"
+                *ngFor="let command of dataContext.commands">
           <i nz-icon type="{{command.icon}}"></i>
         </button>
       </div>
@@ -16,7 +22,7 @@
     <div nz-col nzXs="0" nzSm="0" nzMd="8" nzLg="8" nzXl="7" nzxxl="6">
       <div class="horizontal-right">
         <htd-date-selector [date]="dataContext.date"></htd-date-selector>
-        <button nz-button nzType="default" class="control-margin-normal">转到</button>
+        <button nz-button nzType="default" class="control-margin-normal" (click)="dataContext.gotoDateCommand.action()">转到</button>
       </div>
     </div>
   </div>
